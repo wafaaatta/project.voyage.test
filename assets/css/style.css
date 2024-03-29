@@ -1,0 +1,163 @@
+    /* Styles CSS ici */
+    /* Réinitialisation des marges et des paddings */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    /* Styles pour le corps de la page */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+    }
+    
+    header{
+        background-color: #333;
+                color: #fff;
+                padding: 10px;
+                align-items: center;
+                display: flex;
+                justify-content: space-evenly;
+                flex-wrap: nowrap;
+                flex-direction: row-reverse
+    }
+    /* Styles pour la barre de navigation */
+    nav {
+        background-color: #333;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        
+    }
+    
+    .logo img {
+       
+        height: auto;
+        margin-right: 10px;
+    }
+    
+    .logo span {
+        font-size: 1.2em;
+    }
+    
+    #logout-btn {
+        background-color: #f44336;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    #logout-btn:hover {
+        background-color: #d32f2f;
+    }
+    
+    /* Styles pour le profil du client */
+    .profile {
+        background-color: #fff;
+        padding: 20px;
+        margin: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        width:30%
+    }
+    
+    .profile img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        margin-right: 20px;
+    }
+    
+    .profile .info h2 {
+        margin-bottom: 5px;
+    }
+    
+    h1{
+    
+        text-align: center;
+        margin-top: 10px;
+    
+    }
+    /* Styles pour la section "Ajouter un voyage" */
+    .add-trip-section {
+        background-color: #fff;
+        padding: 20px;
+        margin: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        width:50%;
+    }
+    
+    .add-trip-section h2 {
+        margin-bottom: 10px;
+    }
+    
+    #add-trip-btn {
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    #add-trip-btn:hover {
+        background-color: #388e3c;
+    }
+    
+    /* Styles pour la section "Voyages existants" */
+    .existing-trips {
+        background-color: #fff;
+        padding: 20px;
+        margin: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        width:50%;
+        
+        display: flex;
+        
+        flex-direction: column;
+        align-items: flex-start;
+        
+    }
+    
+    .existing-trips h2 {
+        margin-bottom: 10px;
+        
+    }
+    
+    /* Styles pour les voyages existants */
+    .trip {
+        background-color: #f9f9f9;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        width:50%;
+    }
+    
+    .trip h3 {
+        margin-bottom: 5px;
+    }
+    
+    .edit-trip-btn,
+    .delete-trip-btn {
+        background-color: #2196f3;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+    
+    .edit-trip-btn:hover,
+    .delete-trip-btn:hover {
+        background-color: #1976d2;
+    }
