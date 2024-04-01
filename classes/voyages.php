@@ -1,5 +1,6 @@
 <?php
 require_once "database.php";
+require_once "verifLogin.php";
 
 class Voyage {
 
@@ -15,16 +16,7 @@ public $prix;
 public $imgurl;
 
  
-/*public function add($id_formule, $id_categorie, $nom, $description,  $datededepart, $datederetour, $prix, $imgurl){
-    //  une requête SQL pour insérer les données dans la base de données.
 
-
-    $conn = new Database();
-    $conn->connect();
-    $request = "INSERT INTO `voyage` (`id-formule`, `id-categorie`, `nom`, `description`,  `datedepart`, `datederetour`, `prix`,`imgurl`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-    $reponse = $conn->conn->prepare($request);
-    $reponse->execute([$id_formule, $id_categorie, $nom, $description, $datededepart, $datederetour, $prix, $imgurl]);
-} */
 public function add($id_formule, $id_categorie, $nom, $description, $datededepart, $datederetour, $prix, $imgurl) {
     // Connexion à la base de données
     $conn = new Database();
@@ -110,9 +102,11 @@ public function showAll() {
         $request = "SELECT * FROM voyage";
         $response = $conn->conn->prepare($request);
         $response->execute();
-        $results = $response->fetchAll();
+        return $response->fetchAll();
+        /*$results = $response->fetchAll();*/
 
-        foreach ($results as $row) {
+
+       /* foreach ($results as $row) {
             echo "<div class='trip'>";
             echo "<h3>".$row['nom']."</h3>";
             echo "<p>Date de départ: ".$row['datedepart']."</p>";
@@ -122,15 +116,19 @@ public function showAll() {
             echo "<p>ID Formule: ".$row['id-formule']."</p>";
             echo "<p>Prix: ".$row['prix']."</p>";
             echo "<p>URL de l'image: ".$row['imgurl']."</p>";
+                    
+            $id_voyage = $row['id-voyage'];
             
-           $id_voyage= $row['id-voyage'];
-           
-            //Ajouter un lien autour du bouton permettant de rediriger vers editVoyage.php, on va également ajouté l'id_voyage en paramètre (editVoyage.php?id=35)
+            // Affichage conditionnel des boutons Modifier et Supprimer en fonction du rôle de l'utilisateur
+        if($_SESSION['role'] === "employe") {
+            // Seuls les employés ont le droit de modifier et supprimer
             echo "<a href='../controlers/edit.php?id_voyage=".$id_voyage."'><button class='edit-trip-btn'>Modifier</button></a>";
-            //Ajouter un lien autour du bouton permettant de rediriger vers delete.php, on va également ajouté l'id_voyage en paramètre (delete.php?id=35)
             echo "<a href='../controlers/delete.php?id_voyage=".$id_voyage."'><button class='delete-trip-btn'>Supprimer</button></a>";
-            echo "</div>";
         }
+
+        echo "</div>";
+        }*/
+        
     } catch(PDOException $e) {
         echo "Erreur lors de la récupération des données : " . $e->getMessage();
     }

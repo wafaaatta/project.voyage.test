@@ -13,16 +13,11 @@ class Database {
         try {
             $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->dbname, $this->username, $this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Connexion réussie à la base de données.";
+            return $this->conn; // Retourner la connexion réussie
         } catch(PDOException $e) {
             echo "Erreur de connexion : " . $e->getMessage();
+            return null; // Retourner null en cas d'échec de connexion
         }
-
-        return $this->conn;
-    }
-
-    public function close() {
-        $this->conn = null;
     }
 }
 

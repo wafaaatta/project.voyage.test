@@ -80,7 +80,7 @@ if(isset($_POST["submit"]) && ($_SERVER["REQUEST_METHOD"] == "POST")) {
     } else {
         echo "File is not an image.";
         $uploadOk = 0;
-    }
+    } 
 
     // Vérifie la taille de l'image
     if ($_FILES["imgurl"]["size"] > 500000) {
